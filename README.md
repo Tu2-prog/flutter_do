@@ -1,16 +1,7 @@
 # flutter_do
 
-A new Flutter project.
+A personal Flutter project for a personalised ToDo containing a minimalistic design to maintain focus on the core functionality.
 
-## Getting Started
+## Technical Documenation
+The Hive package is used for storing data locally on the device. For the UI the Materials UI design package was used.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
