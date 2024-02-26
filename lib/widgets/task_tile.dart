@@ -13,11 +13,21 @@ class TaskTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      leading: Checkbox(
-        value: isDone,
-        onChanged: onChanged,
+    return Card(
+      elevation: 4, // Adds shadow to the card
+      margin: EdgeInsets.symmetric(horizontal: 8, vertical: 4), // Adds some margin around the card
+      child: ListTile(
+        title: Text(
+          title,
+          style: TextStyle(
+            fontSize: 16,
+            decoration: isDone ? TextDecoration.lineThrough : null, // Add strikethrough if task is done
+          ),
+        ),
+        leading: Checkbox(
+          value: isDone,
+          onChanged: onChanged,
+        ),
       ),
     );
   }
