@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/add_task_screen.dart';
+import 'screens/task_detail_screen.dart';
 import 'providers/task_provider.dart';
 
 void main() {
@@ -22,7 +23,11 @@ class MyTodoApp extends StatelessWidget {
         routes: {
           '/': (ctx) => HomeScreen(),
           '/add-task': (ctx) => AddTaskScreen(),
-          // Add more routes if needed
+          '/task-detail': (ctx) {
+            final Map<String, dynamic> args = ModalRoute.of(ctx)!.settings.arguments as Map<String, dynamic>;
+            final String taskId = args['taskId'];
+            return TaskDetailScreen(taskId: taskId);
+          },
         },
       ),
     );

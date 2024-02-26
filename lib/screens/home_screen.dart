@@ -16,12 +16,17 @@ class HomeScreen extends StatelessWidget {
         itemCount: tasks.length,
         itemBuilder: (ctx, index) {
           final task = tasks[index];
-          return TaskTile(
-            title: task.title,
-            isDone: task.isDone,
-            onChanged: (value) {
-              // Implement task completion logic
+          return GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed('/task-detail', arguments: {'taskId': task.id});
             },
+            child: TaskTile(
+              title: task.title,
+              isDone: task.isDone,
+              onChanged: (value) {
+                // Implement task completion logic
+              },
+            ),
           );
         },
       ),
