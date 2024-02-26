@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/add_task_screen.dart';
 import 'screens/task_detail_screen.dart';
 import 'providers/task_provider.dart';
+import 'models/task.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(TaskAdapter()); // Register the adapter
+  await Hive.openBox<Task>('tasks'); // Open the 'tasks' box
   runApp(MyTodoApp());
 }
+
 
 class MyTodoApp extends StatelessWidget {
   @override
